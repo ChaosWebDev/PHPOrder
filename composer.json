@@ -1,8 +1,8 @@
 {
     "name": "chaoswd/phporder",
-    "description": "In-Progress Super-Ultra-Micro-Framework.",
+    "description": "In-Progress Micro-Framework.",
     "type": "project",
-    "license": "proprietary",
+    "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Jordan Gerber",
