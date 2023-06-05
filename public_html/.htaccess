@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Skip routing for specific files and directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Serve the favicon.ico file explicitly
+RewriteRule ^favicon.ico$ assets/favicons/favicon.ico [L]
+
+# Route all other requests to your PHP controller
+RewriteRule ^ index.php [L]

@@ -1,0 +1,4 @@
+/private/config/.env
+/public/assets/*.map
+/vendor*
+composer.lock

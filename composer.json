@@ -1,0 +1,31 @@
+{
+    "name": "chaoswd/phporder",
+    "description": "In-Progress Super-Ultra-Micro-Framework.",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Jordan Gerber",
+            "homepage": "https://www.chaosweb.dev",
+            "role": "Development",
+            "email": "jordangerber@gmail.com"
+        },
+        {
+            "name": "DBA Chaos Website Development",
+            "homepage": "https://www.chaosweb.dev",
+            "email": "jordan@chaosweb.dev"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ChaosWD\\Controller\\": "private/src/controllers"
+        },
+        "files": [
+            "private/config/initialization.php",
+            "private/src/glob/traits.php",
+            "private/src/glob/functions.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
