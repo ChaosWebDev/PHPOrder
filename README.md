@@ -7,13 +7,13 @@ to throw an issue log and I'll get to it as quick as I can.
 
 <h2>Instantiation</h2>
 <em>/public_html/index.php</em>
-<code>
+````
   require(__DIR__ . "/../vendor/autoload.php"); use
   ChaosWD\Controller\SystemController;
   SystemController::setup();
   $request = new ChaosWD\Controller\RequestController();
   $request->request($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
-</code>
+````
 
 <h2>Controllers</h2>
 <h3>EnvironmentController</h3>
@@ -31,20 +31,20 @@ to throw an issue log and I'll get to it as quick as I can.
   the token on the server side.
 </p>
 <h4>Utilization</h4>
-<code>
+````
   use ChaosWD\Controller\FormController;
   $form = new FormController();
   $form->validateToken($_POST['token']);
   $username = $form->process($_POST['username'], "string");
   $password = $form->process($_POST['password'], "string");
-</code>
+````
 
 <h3>JSONController</h3>
 <p>
   This controller will work any any API Response that comes back in JSON format.
 </p>
 <h4>Utilization</h4>
-<code>
+````
   use ChaosWD\Controller\JSONController;
   
   $jc = new JSONController($url); // The base URL for the API (without Endpoints) 
@@ -65,7 +65,7 @@ to throw an issue log and I'll get to it as quick as I can.
                     "params" => method=active", 
                     "limit" => 5 ); // EACH VALUE CAN BE LEFT NULL OR OMITTED 
   $complexResponse = $jc->getComplex($options); // Limit will only trigger if the results before limit are an array. Otherwise, it'll ignore this field.
-</code>
+````
 
 <h3>LogController</h3>
 <p>
@@ -73,10 +73,10 @@ to throw an issue log and I'll get to it as quick as I can.
     It will create the log and make a note of the creation time (based on your set default_timezone).
 </p>
 <h4>Utilization</h4>
-<code>
+````
     $userLogger = new ChaosWD\Controller\LogController("userLog");
     $userLog->add($object);
-</code>
+````
 <p>
     $object needs to include at least 2 parts:<br>
     * $object->reason<br>
