@@ -80,14 +80,14 @@ class FormController
         return $token;
     }
 
-    protected function validateToken()
+    protected function validateToken($token)
     {
-        if (!isset($_SESSION['token']) || !isset($_POST['token'])) {
+        if (!isset($_SESSION['token'])) {
             setcookie('message', 'Unable to validate form.', time() + 30, '', '', false, 'lax');
             $this->redirectToForm();
         }
 
-        if ($_SESSION['token'] !== $_POST['token']) {
+        if ($_SESSION['token'] !== $token) {
             setcookie('message', 'Unable to validate form.', time() + 30, '', '', false, 'lax');
             $this->redirectToForm();
         }

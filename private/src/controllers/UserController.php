@@ -2,7 +2,6 @@
 
 namespace ChaosWD\Controller;
 
-use ChaosWD\Controller\ChaosToken;
 use ChaosWD\Controller\FormController;
 use stdClass;
 
