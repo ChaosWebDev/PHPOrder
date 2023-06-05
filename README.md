@@ -3,16 +3,17 @@ to throw an issue log and I'll get to it as quick as I can.
 
 <h2>Instillation</h2>
 <h3>With Composer</h3>
-    composer install chaoswd/phporder
+<pre>composer install chaoswd/phporder</pre>
 
 <h2>Instantiation</h2>
 <em>/public_html/index.php</em>
-    require(__DIR__ . "/../vendor/autoload.php"); use
-    ChaosWD\Controller\SystemController;
-    SystemController::setup();
-    $request = new ChaosWD\Controller\RequestController();
-    $request->request($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
-
+<pre>
+require(__DIR__ . "/../vendor/autoload.php"); use
+ChaosWD\Controller\SystemController;
+SystemController::setup();
+$request = new ChaosWD\Controller\RequestController();
+$request->request($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
+</pre>
 <h2>Controllers</h2>
 <h3>EnvironmentController</h3>
 <p>
@@ -29,40 +30,44 @@ to throw an issue log and I'll get to it as quick as I can.
   the token on the server side.
 </p>
 <h4>Utilization</h4>
-    use ChaosWD\Controller\FormController;
-    $form = new FormController();
-    $form->validateToken($_POST['token']);
-    $username = $form->process($_POST['username'], "string");
-    $password = $form->process($_POST['password'], "string");
-
+<pre>
+use ChaosWD\Controller\FormController;
+$form = new FormController();
+$form->validateToken($_POST['token']);
+$username = $form->process($_POST['username'], "string");
+$password = $form->process($_POST['password'], "string");
+</pre>
 <h3>JSONController</h3>
 <p>
   This controller will work any any API Response that comes back in JSON format.
 </p>
 <h4>Utilization</h4>
-    use ChaosWD\Controller\JSONController;
-    $jc = new JSONController($url); // The base URL for the API (without Endpoints) 
-    $fullResponse = $jc->getFull($url); // URL is optional. If left blank, it will take the one from the instantiation.
-    $endpoint = "endpoint";
-    $endpointResponse = $jc->getEndpoint($endpoint); 
-    // $path = "primary->sub_object->sub_sub_object";
-    depending on how the response if formatted (before decoding) 
-    $specificResponse = $jc->getPartial($path, $fullResponse); // $fullResponse can be left blank.
-    $options = array( "url" => null,
-                      "path" => $path,
-                      "endpoint" => "endpoint_name", 
-                      "params" => method=active", 
-                      "limit" => 5 ); // EACH VALUE CAN BE LEFT NULL OR OMITTED 
-    $complexResponse = $jc->getComplex($options); // Limit will only trigger if the results before limit are an array. Otherwise, it'll ignore this field.
-
+<pre>
+use ChaosWD\Controller\JSONController;
+$jc = new JSONController($url); // The base URL for the API (without Endpoints) 
+$fullResponse = $jc->getFull($url); // URL is optional. If left blank, it will take the one from the instantiation.
+$endpoint = "endpoint";
+$endpointResponse = $jc->getEndpoint($endpoint); 
+// $path = "primary->sub_object->sub_sub_object";
+depending on how the response if formatted (before decoding) 
+$specificResponse = $jc->getPartial($path, $fullResponse); // $fullResponse can be left blank.
+$options = array( "url" => null,
+                  "path" => $path,
+                  "endpoint" => "endpoint_name", 
+                  "params" => method=active", 
+                  "limit" => 5 ); // EACH VALUE CAN BE LEFT NULL OR OMITTED 
+$complexResponse = $jc->getComplex($options); // Limit will only trigger if the results before limit are an array. Otherwise, it'll ignore this field.
+</pre>
 <h3>LogController</h3>
 <p>
     Log Controller is fairly straight forward. When you instantiate it, you put what you want the log name to be (without the .log).<br>
     It will create the log and make a note of the creation time (based on your set default_timezone).
 </p>
 <h4>Utilization</h4>
-    $userLogger = new ChaosWD\Controller\LogController("userLog");
-    $userLog->add($object);
+<pre>
+$userLogger = new ChaosWD\Controller\LogController("userLog");
+$userLog->add($object);
+</pre>
 <p>
     $object needs to include at least 2 parts:
     [1] $object->reason
