@@ -3,7 +3,7 @@ to throw an issue log and I'll get to it as quick as I can.
 
 <h2>Instillation</h2>
 <h3>With Composer</h3>
-<pre>composer install chaoswd/phporder</pre>
+<pre>composer create-project chaoswd/phporder projectName</pre>
 
 <h2>Instantiation</h2>
 <em>/public_html/index.php</em>

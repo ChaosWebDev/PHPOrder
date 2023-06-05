@@ -27,5 +27,9 @@
         ]
     },
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "suggest": {
+        "tedivm/stash": "^",
+        "monolog/monolog": "^"
+    }
 }
